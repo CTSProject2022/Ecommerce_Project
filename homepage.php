@@ -1,4 +1,13 @@
 <?php
+session_start(); // Running session on a page
+
+if (isset($_SESSION["user_id"])) {
+    $first_name = $_SESSION["first_name"];
+    $last_name = $_SESSION["last_name"];
+
+    echo "Welcome $first_namr $last_name";
+}
+
 
 include "header.php";
 
