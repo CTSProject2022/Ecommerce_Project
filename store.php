@@ -136,7 +136,7 @@
                     $item_description = $row["item_description"];
                     $item_image = $row["item_image"];
                     $item_price = $row["item_price"];
-
+                    $link = "details.php?id=$item_id";
             ?>
 
                     <!---out side php tag-->
@@ -153,7 +153,7 @@
                                 <div class="price">
                                     <span class="rupee-icon">TTD $</span><?php echo $item_price; ?>
                                 </div>
-                                <a href="#" class="blue-btn">Add to cart</a>
+                                <a href="<?php echo $link; ?>" class="<?php echo $link; ?>">View More</a>
                             </div>
                         </div>
                     </div>
