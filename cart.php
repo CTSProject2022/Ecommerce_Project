@@ -1,4 +1,11 @@
-<?php include "header.php"; ?>
+<?php
+session_start();
+
+include "code.isLoggedIn.php";
+include "code.viewCart.php";
+include "header.php";
+
+?>
 
 <h1>Cart</h1>
 
@@ -92,42 +99,74 @@
 
             <?php
 
+            if (empty($cart)) {
+                echo "Cart is empty";
+            } else {
+
+
+
+                foreach ($cart as $item) {
+                    # code...
+
+                    $cart_id = $item["cart_id"];
+                    $item_id = $item["item_id"];
+                    $item_title = $item["item_title"];
+                    $item_image = $item["item_image"];
+                    $item_price = $item["item_price"];
+                    $link = "code.removeFromCart.php?id=$cart_id";
+
+            ?>
+
+
+                    <!-- PRODUCT -->
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+                            <img class="img-responsive" src="<?php echo $item_image; ?>" alt="prewiew" width="80" height="120">
+                        </div>
+                        <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                            <h4 class="product-name"><strong><?php echo $item_title; ?></strong></h4>
+                            <h4>
+                                <small>Product description</small>
+                            </h4>
+                        </div>
+                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                            <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                <h6><strong><?php echo $item_price; ?> <span class="text-muted">x</span></strong></h6>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md-4">
+                                <div class="quantity">
+                                    <input type="button" value="+" class="plus">
+                                    <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty" size="4">
+                                    <input type="button" value="-" class="minus">
+                                </div>
+                            </div>
+                            <div class="col-2 col-sm-2 col-md-2 text-right">
+
+                                <a class="btn btn-outline-danger btn-xs" href="<?php echo $link; ?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+
+            <?php
+
+
+                }
+            }
 
 
 
 
             ?>
-            <!-- PRODUCT -->
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-2 text-center">
-                    <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
-                </div>
-                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                    <h4 class="product-name"><strong>Product Name</strong></h4>
-                    <h4>
-                        <small>Product description</small>
-                    </h4>
-                </div>
-                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-                    <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-                        <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-                    </div>
-                    <div class="col-4 col-sm-4 col-md-4">
-                        <div class="quantity">
-                            <input type="button" value="+" class="plus">
-                            <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty" size="4">
-                            <input type="button" value="-" class="minus">
-                        </div>
-                    </div>
-                    <div class="col-2 col-sm-2 col-md-2 text-right">
-                        <button type="button" class="btn btn-outline-danger btn-xs">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
 
-            <hr>
+
+
 
             <!-- END PRODUCT -->
             <div class="pull-right">
@@ -150,7 +189,7 @@
             <div class="pull-right" style="margin: 10px">
                 <a href="" class="btn btn-success pull-right">Checkout</a>
                 <div class="pull-right" style="margin: 5px">
-                    Total price: <b>50.00€</b>
+                    Total price: <b>TTD <?php echo $subtotal; ?></b>
                 </div>
             </div>
         </div>

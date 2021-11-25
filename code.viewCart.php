@@ -3,6 +3,11 @@
 
 include "connection.php";
 
+$cart = null;
+$subtotal = 0;
+$total = 0;
+
+
 $sql = "SELECT * FROM  cart, items WHERE cart.item_id = items.item_id AND cart.user_id = $user_id AND cart.cart_item_status = 'cart' ";
 
 
@@ -19,3 +24,6 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "0 results";
 }
+
+
+$total = $subtotal;
