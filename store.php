@@ -22,21 +22,33 @@
     .product-list>ul>li {
         width: 25%;
         padding: 10px;
+
     }
 
     .white-box {
         border-radius: 5px;
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.4);
         background-color: #ffffff;
-        padding: 35px 20px;
+        padding: 20px 20px;
         transition: all 0.5s ease-in-out;
         position: relative;
+
+
+        margin-top: 29px;
+        top: 20px;
+
+
+
+
+
+
+
     }
 
     .wishlist-icon {
         position: absolute;
         right: 12px;
-        top: 10px;
+        top: 20px;
     }
 
     .wishlist-icon img {
@@ -60,7 +72,7 @@
     }
 
     .product-name {
-        font-size: 16px;
+        font-size: 17px;
         color: #666;
         text-align: center;
         margin: 10px 0 10px;
@@ -72,7 +84,7 @@
 
     .price {
         margin-top: 0;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 600;
         color: #000000;
         font-family: 'Open Sans', sans-serif;

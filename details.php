@@ -421,10 +421,8 @@ include "header.php"; ?>
 
 
 
-                                                    <button type="submit" class="add-to-cart ajax-spin-cart" id="AddToCart">
-                                                        <i class="ion-bag"></i>
-                                                        <span class="list-cart-title cart-title" id="AddToCartText">Add to cart</span>
-                                                    </button>
+
+
                                                     <script>
                                                         jQuery('#AddToCart').click(function(e) {
                                                             e.preventDefault();

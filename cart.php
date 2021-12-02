@@ -5,6 +5,7 @@ include "code.isLoggedIn.php";
 include "code.viewCart.php";
 include "header.php";
 
+
 ?>
 
 <h1>Cart</h1>
@@ -114,6 +115,7 @@ include "header.php";
                     $item_image = $item["item_image"];
                     $item_price = $item["item_price"];
                     $link = "code.removeFromCart.php?id=$cart_id";
+                    $checkout = "code.checkout.php?id";
 
             ?>
 
@@ -187,7 +189,12 @@ include "header.php";
                 </div>
             </div>
             <div class="pull-right" style="margin: 10px">
-                <a href="" class="btn btn-success pull-right">Checkout</a>
+
+                <a class="btn btn-success pull-right" href=" <?php echo $checkout; ?>">Checkout</a>
+
+
+
+
                 <div class="pull-right" style="margin: 5px">
                     Total price: <b>TTD <?php echo $subtotal; ?></b>
                 </div>
