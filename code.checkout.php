@@ -9,7 +9,11 @@ include "code.viewCart.php";
 
 //check if cart is empty
 if (empty($cart)) {
-    echo "Cart is empty";
+    //echo "Cart is empty";
+    echo json_encode(["error" => "Cart is empty"]);
+
+
+
     exit();
 }
 
@@ -23,9 +27,9 @@ $sql = "INSERT INTO `receipts` (`receipt_id`, `user_id`, `receipt_code`, `receip
 
 if (mysqli_query($conn, $sql)) {
     $receipt_id = mysqli_insert_id($conn);
-    echo "New record created successfully. Last inserted ID is: " . $receipt_id;
+    //echo "New record created successfully. Last inserted ID is: " . $receipt_id;
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 // Record products purchased and update cart
@@ -48,13 +52,14 @@ foreach ($cart as $item) {
 }
 
 if (mysqli_multi_query($conn, $sql)) {
-    echo "New records created successfully";
+    //echo "New records created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    //echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-  
+
 
 
 // Update items in stock
 
 // Implement stripe payment
+include "code.stripe2.php";

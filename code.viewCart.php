@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
         $subtotal += $item["item_price"];
     }
 } else {
-    echo "0 results";
+    //echo "0 results";
 }
 
 

@@ -5,4 +5,6 @@
     <button type="submit" name="checkout">Click Me</button>
 </from>
 
+<?php include "code.stripe1.php"; ?>
+
 <?php include "footer.php"; ?>
