@@ -115,7 +115,7 @@ include "header.php";
                     $item_image = $item["item_image"];
                     $item_price = $item["item_price"];
                     $link = "code.removeFromCart.php?id=$cart_id";
-                    $checkout = "code.checkout.php?id";
+                    $checkout = "code.checkout.php?id=$cart_id";
 
             ?>
 

@@ -524,4 +524,10 @@ include "header.php"; ?>
 
 
 
-<?php include "footer.php"; ?>
+<?php
+include "recommender.php";
+
+//include "footer.php";
+
+
+?>

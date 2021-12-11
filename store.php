@@ -148,7 +148,11 @@
                     $item_description = $row["item_description"];
                     $item_image = $row["item_image"];
                     $item_price = $row["item_price"];
-                    $link = "details.php?id=$item_id";
+
+                    $item_cat = $row["item_cat"];
+                    $link = "details.php?cat=$item_cat&id=$item_id";
+
+                    //$link = "details.php?id=$item_id";
             ?>
 
                     <!---out side php tag-->
